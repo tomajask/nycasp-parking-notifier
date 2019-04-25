@@ -13,6 +13,30 @@ When there in no need to move your car, you will get the text message!
 
 ## Usage
 
+### Heroku
+
+1. Start with clicking Heroku Deploy Button:
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
+2. You will be asked to set:
+- App's name
+- Region
+- Environmental variables for [Twillio](https://www.twilio.com/console) & [Twitter](https://developer.twitter.com/en/apps/)
+
+3. Click `Deploy App` button.
+4. Click `Manage App` button.
+5. Go to `Heroku Scheduler` settings:
+- Create a new job.
+- Set the schedule to run in preferably once per day, for example in the evening (remember, it's UTC).
+- As running command type: `ruby notifier.rb`
+- Save new job
+6. Everything should be set and working.
+Optionally:
+7. You can check logs after job is triggered. (requirement: [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) installed)
+- run: `heroku logs --ps scheduler -a your-app-name -t` - this will print logs to your terminal and tail them.
+
+
 ### Locally
 
 #### 1. Setup your credentials by filling the `secrets.yml` file:
@@ -34,11 +58,13 @@ You can start by copying the `secrets.yml` file:
 cp secrets.example.yml
 ```
 
-#### 2. Run the script
+#### 2. Run the script (Docker required, Ruby not required to be installed locally)
+Following command will fetch Docker base image, build app's new Docker image and run ruby command inside of it:
 ```bash
 make run
 ```
 
-## TODO:
-1. Describe the setup with Cron locally.
-2. Describe the automated setup on Heroku.
+#### 2.1 Run the script (Docker not required, Ruby required to be installed locally)
+```bash
+ruby notifier.rb
+```
