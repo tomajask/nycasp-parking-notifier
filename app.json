@@ -1,0 +1,51 @@
+{
+  "name": "NYCASP Parking Notifier",
+  "description": "Get a text message when there is not need to move your car in the eveving.",
+  "repository": "https://github.com/tomajask/nycasp-parking-notifier",
+  "website": "https://github.com/tomajask/nycasp-parking-notifier",
+  "addons": ["scheduler"],
+  "keywords": ["twilio", "twitter", "ruby", "sms", "api", "automation", "ifttt"],
+  "buildpacks": [{ "url": "heroku/ruby" }],
+  "env": {
+    "TWILIO_ACCOUNT_SID": {
+      "description": "Account SID - you can get it from https://www.twilio.com/console after signing in.",
+      "value": "",
+      "required": true
+    },
+    "TWILIO_AUTH_TOKEN": {
+      "description": "Auth Token - you can get it from https://www.twilio.com/console after signing in.",
+      "value": "",
+      "required": true
+    },
+    "TWILIO_FROM_NUMBER": {
+      "description": "Your registered Twilio phone number. Messages will be sent from this number.",
+      "value": "",
+      "required": true
+    },
+    "TWILIO_TO_NUMBER": {
+      "description": "Phone number where messages are meant to be sent.",
+      "value": "",
+      "required": true
+    },
+    "TWITTER_API_KEY": {
+      "description": "API Key - you can get it in the apps menu from https://developer.twitter.com/en/apps/",
+      "value": "",
+      "required": true
+    },
+    "TWITTER_API_SECRET_KEY": {
+      "description": "API Secret Key - you can get it in the apps menu from https://developer.twitter.com/en/apps/",
+      "value": "",
+      "required": true
+    },
+    "TWITTER_ACCESS_TOKEN": {
+      "description": "Access Token - you can get it in the apps menu from https://developer.twitter.com/en/apps/",
+      "value": "",
+      "required": true
+    },
+    "TWITTER_ACCESS_SECRET_TOKEN": {
+      "description": "Access Secret Token - you can get it in the apps menu from https://developer.twitter.com/en/apps/",
+      "value": "",
+      "required": true
+    }
+  }
+}

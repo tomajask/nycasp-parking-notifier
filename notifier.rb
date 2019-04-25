@@ -26,7 +26,7 @@ TWILIO_CLIENT = Twilio::REST::Client.new(
 def send_text_message()
   puts TWILIO_CLIENT.messages.create(
     from: SECRETS.dig("twilio", "from_number")  || ENV['TWILIO_FROM_NUMBER'],
-    to:   SECRETS.dig("twilio", "to_number")    || ENV['TWILLIO_TO_NUMBER'],
+    to:   SECRETS.dig("twilio", "to_number")    || ENV['TWILIO_TO_NUMBER'],
     body: "You don't have to move your car tonight. Enjoy your evening!"
   )
 end
