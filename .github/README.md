@@ -13,7 +13,8 @@ When there in no need to move your car, you will get the text message!
 
 ## Usage
 
-### Heroku
+### Heroku (preferred)
+Setuping the notifier on Heroku will allow you to fully automate it. Notifier will be triggered everyday at the same time of the day and text message will be sent to you if needed.
 
 1. Start with clicking Heroku Deploy Button:
 
@@ -38,6 +39,7 @@ Optionally:
 
 
 ### Locally
+If you don't want to deploy it to Heroku you can run it manually on your local machine.
 
 #### 1. Setup your credentials by filling the `secrets.yml` file:
 ```yaml
